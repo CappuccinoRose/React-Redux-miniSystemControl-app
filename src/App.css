@@ -1,0 +1,170 @@
+/* 全局重置 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f6f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 顶部导航 */
+.app-header {
+  background: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.status-indicator {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.count-badge {
+  background: #eef2f7;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* 状态点颜色 */
+.status-dot.online { color: #27ae60; font-weight: bold; }
+.status-dot.maintenance { color: #f39c12; font-weight: bold; }
+.status-dot.offline { color: #c0392b; font-weight: bold; }
+
+/* 主内容区域布局 */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 左右两栏 */
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr; /* 手机端单栏 */
+  }
+}
+
+/* 卡片通用样式 */
+.panel {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.panel h2 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f2f5;
+  color: #34495e;
+}
+
+.panel h3 {
+  font-size: 0.95rem;
+  margin: 15px 0 10px;
+  color: #7f8c8d;
+}
+
+/* 按钮组 */
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background-color: #f8f9fa;
+  border-color: #bbb;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.btn-increase {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+
+.btn-increase:hover { background-color: #c8e6c9; }
+
+.btn-decrease {
+  background-color: #ffebee;
+  color: #c62828;
+  border-color: #ffcdd2;
+}
+
+.btn-decrease:hover { background-color: #ffcdd2; }
+
+/* 日志区域 */
+.current-msg {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.log-list {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.log-item {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.85rem;
+  color: #555;
+  font-family: monospace; /* 等宽字体看起来更像日志 */
+}
+
+.log-item:last-child {
+  border-bottom: none;
+}
+
+.log-empty {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
